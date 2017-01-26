@@ -1,19 +1,19 @@
 import React from 'react';
-import Rebase from 're-base';
+import { Link } from 'react-router';
 
 class LanguageList extends React.Component {
   render() {
-    let listItems = this.props.items.map((lang) => {
+    const listItems = this.props.languages.map((lang) => {
       return (
-        <li key={lang.id}>
-          <span>{lang.name}</span>
-        </li>
+        <Link key={lang.id} className="nav-item nav-link" to={`/language/${lang.id}`}>
+          {lang.name}
+        </Link>
       );
     });
     return (
-      <ul>
+      <nav>
         {listItems}
-      </ul>
+      </nav>
     );
   }
 }
