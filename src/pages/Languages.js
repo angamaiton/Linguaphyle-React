@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Rebase from 're-base';
-import LanguageList from './LanguageList';
-import LanguageSearchForm from './LanguageSearchForm';
+import LanguageList from '../components/Languages/LanguageList';
+import LanguageSearchForm from '../components/Languages/LanguageSearchForm';
 
 const base = Rebase.createClass({
   apiKey: 'AIzaSyCcfqngXjxwKNjuj2stWhLwmH6D2IMd9ac',

@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import Rebase from 're-base';
-import SublanguageList from './SublanguageList';
 
 const base = Rebase.createClass({
   apiKey: 'AIzaSyCcfqngXjxwKNjuj2stWhLwmH6D2IMd9ac',
@@ -10,7 +9,7 @@ const base = Rebase.createClass({
   messagingSenderId: '1071573957158',
 });
 
-class LanguageDetails extends React.Component {
+class LanguageDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -36,5 +35,13 @@ class LanguageDetails extends React.Component {
     );
   }
 }
+
+LanguageDetails.propTypes = {
+  children: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.number,
+    }),
+  }),
+};
 
 export default LanguageDetails;

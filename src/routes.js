@@ -2,13 +2,14 @@ import React from 'react';
 import { Router, Route, IndexRoute } from 'react-router';
 
 import App from './App';
-import Home from './Home';
-import Languages from './Languages';
-import LanguageDetails from './LanguageDetails';
-import SublanguageList from './SublanguageList';
-import Linguistics from './Linguistics';
-import Etymology from './Etymology';
-import EtymologyDetails from './EtymologyDetails';
+import Home from './pages/Home';
+import Languages from './pages/Languages';
+import LanguageDetails from './components/Languages/LanguageDetails';
+import SublanguageList from './components/Languages/SublanguageList';
+import Linguistics from './pages/Linguistics';
+import Etymology from './pages/Etymology';
+import EtymologyDetails from './components/Etymology/EtymologyDetails';
+import Login from './pages/Login';
 import NotFound from './NotFound';
 
 const Routes = props => (
@@ -24,6 +25,7 @@ const Routes = props => (
       <Route path="/etymology" component={Etymology}>
         <Route path="/etymology/:id" component={EtymologyDetails} />
       </Route>
+      <Route path="/login" component={Login} />
       <Route path="*" component={NotFound} />
     </Route>
   </Router>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Rebase from 're-base';
 
-import EtymologyList from './EtymologyList';
+import EtymologyList from '../components/Etymology/EtymologyList';
 
 const base = Rebase.createClass({
   apiKey: 'AIzaSyCcfqngXjxwKNjuj2stWhLwmH6D2IMd9ac',
@@ -25,7 +25,6 @@ class Etymology extends Component {
       asArray: true,
       then(list) {
         this.setState({ list });
-        console.log(this.state.list);
       },
     });
   }
