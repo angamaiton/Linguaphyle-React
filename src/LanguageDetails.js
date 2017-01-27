@@ -1,5 +1,6 @@
 import React from 'react';
 import Rebase from 're-base';
+import SublanguageList from './SublanguageList';
 
 const base = Rebase.createClass({
   apiKey: 'AIzaSyCcfqngXjxwKNjuj2stWhLwmH6D2IMd9ac',
@@ -25,7 +26,13 @@ class LanguageDetails extends React.Component {
   }
   render() {
     return (
-      <div>{this.state.language.description}</div>
+      <div>
+        <h4>Details</h4>
+        <div>{this.state.language.description}</div>
+        <div>
+          {this.props.children}
+        </div>
+      </div>
     );
   }
 }

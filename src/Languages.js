@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Rebase from 're-base';
 import LanguageList from './LanguageList';
 import LanguageSearchForm from './LanguageSearchForm';
@@ -25,7 +25,6 @@ class Languages extends Component {
       asArray: true,
       then(list) {
         this.setState({ list });
-        console.log(this.state.list);
       },
     });
   }
@@ -42,16 +41,22 @@ class Languages extends Component {
           <LanguageSearchForm />
         </div>
         <div className="col-3">
-          <h4>Languages</h4>
           <LanguageList languages={this.state.list} />
         </div>
         <div className="col-9">
-          <h4>Details</h4>
           {this.props.children}
         </div>
       </div>
     );
   }
 }
+
+Languages.propTypes = {
+  children: PropTypes.node,
+};
+
+Languages.defaultProps = {
+  children: '',
+};
 
 export default Languages;
