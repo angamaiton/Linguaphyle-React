@@ -10,6 +10,7 @@ import Linguistics from './pages/Linguistics';
 import Etymology from './pages/Etymology';
 import EtymologyDetails from './components/Etymology/EtymologyDetails';
 import Login from './pages/Login';
+import Search from './pages/Search';
 import NotFound from './NotFound';
 
 const Routes = props => (
@@ -26,6 +27,7 @@ const Routes = props => (
         <Route path="/etymology/:id" component={EtymologyDetails} />
       </Route>
       <Route path="/login" component={Login} />
+      <Route path="/search" component={Search} />
       <Route path="*" component={NotFound} />
     </Route>
   </Router>
