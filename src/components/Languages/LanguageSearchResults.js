@@ -1,9 +1,9 @@
 import React from 'react';
 
-const LanguageSearchResults = () => {
+const LanguageSearchResults = props => {
   return (
     <div>
-      test
+      {props.term}
     </div>
   );
 };
