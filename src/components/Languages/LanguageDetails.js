@@ -16,7 +16,7 @@ class LanguageDetails extends Component {
       language: {},
     };
   }
-  componentDidMount() {
+  componentWillMount() {
     this.ref = base.syncState(`/languages/${this.props.params.id}`, {
       context: this,
       asArray: false,

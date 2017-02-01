@@ -1,9 +1,11 @@
 import React from 'react';
-import { Highlight } from 'react-instantsearch';
+import { Link } from 'react-router';
 
 const LanguageSearchResults = ({ hit }) => (
   <div>
-    <Highlight attributeName="name" hit={hit} />
+    <Link key={hit.id} className="nav-item nav-link" to={`/language/${hit.id}`}>
+      {hit.name}
+    </Link>
   </div>
 );
 

@@ -12,10 +12,10 @@ const base = Rebase.createClass({
 class LanguageSearchForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { term: '' }
+    this.state = { term: '' };
   }
   componentDidMount() {
-    
+
   }
   onInputChange(term) {
     base.syncState('languages/', {
@@ -24,8 +24,8 @@ class LanguageSearchForm extends Component {
       asArray: true,
       queries: {
         orderByChild: 'name',
-        limitToLast: 3
-      }
+        limitToLast: 3,
+      },
     });
     this.props.onTermChange(term);
   }

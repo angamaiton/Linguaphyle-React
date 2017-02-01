@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import Rebase from 're-base';
 import { Link } from 'react-router';
 import LanguageList from '../components/Languages/LanguageList';
-import LanguageSearchForm from '../components/Languages/LanguageSearchForm';
 
 const base = Rebase.createClass({
   apiKey: 'AIzaSyCcfqngXjxwKNjuj2stWhLwmH6D2IMd9ac',
@@ -41,9 +40,6 @@ class Languages extends Component {
             <p className="lead">This is the section where you can look up languages.</p>
             <Link to="/search">Search (temporary)</Link>
           </div>
-        </div>
-        <div className="col-12">
-          <LanguageSearchForm onTermChange={this.handleTermChange} />
         </div>
         <div className="col-3">
           <LanguageList languages={this.state.list} />

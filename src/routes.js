@@ -17,17 +17,15 @@ const Routes = props => (
   <Router {...props}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
-      <Route path="/languages" component={Languages}>
-        <Route path="/language/:id" component={LanguageDetails}>
-          <Route path="/language/:id/sublanguages" component={SublanguageList} />
-        </Route>
-      </Route>
+      <Route path="/languages" component={Languages} />
       <Route path="/linguistics" component={Linguistics} />
       <Route path="/etymology" component={Etymology}>
         <Route path="/etymology/:id" component={EtymologyDetails} />
       </Route>
       <Route path="/login" component={Login} />
-      <Route path="/search" component={Search} />
+      <Route path="/search" component={Search}>
+        <Route path="/language/:id" component={LanguageDetails} />
+      </Route>
       <Route path="*" component={NotFound} />
     </Route>
   </Router>
