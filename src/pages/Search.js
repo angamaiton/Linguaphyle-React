@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Rebase from 're-base';
-import LanguageSearchForm from '../components/Languages/LanguageSearchForm';
+import { InstantSearch, SearchBox, Hits, RefinementList, ClearAll, CurrentRefinements } from 'react-instantsearch/dom';
 import LanguageSearchResults from '../components/Languages/LanguageSearchResults';
 import './Search.css';
 
@@ -16,7 +16,7 @@ class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      term: ''
+      term: '',
     };
   }
   componentDidMount() {
@@ -28,24 +28,23 @@ class Search extends Component {
       },
     });
   }
-  handleTermChange(term) {
-    console.log(term);
-  }
+
   render() {
     return (
       <div className="row">
         <div className="col">
-          <form>
-            <div className="form-group">
-              <input
-                type="text" className="form-control" id="languageInput"
-                aria-describedby="languageSearchHelp"
-                placeholder="Search for a language (or a vocabulary word)"
-              />
-            </div>
-          </form>
-          <h4 id="resultsHeader">Results</h4>
-          <LanguageSearchResults results={this.state.term} />
+          <InstantSearch
+            appId="Y17G9F7VIZ"
+            apiKey="57ab0370251fce96c5c0047cef2b4f69"
+            indexName="dev_languages"
+          >
+            <CurrentRefinements />
+            <SearchBox />
+            <ClearAll />
+            <RefinementList attributeName="category" />
+            <h4 id="resultsHeader">Results</h4>
+            <Hits hitsComponent={LanguageSearchResults} />
+          </InstantSearch>
         </div>
       </div>
     );

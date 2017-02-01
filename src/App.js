@@ -1,22 +1,20 @@
-import React, { Component } from 'react';
+import React, { PropTypes } from 'react';
 import Navigation from './Navigation';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Navigation />
-        <div className="container" id="appContainer">
-          {this.props.children}
-        </div>
+const App = (props) => {
+  return (
+    <div className="App">
+      <Navigation />
+      <div className="container" id="appContainer">
+        {props.children}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 App.propTypes = {
-  children: React.PropTypes.node,
+  children: PropTypes.node,
 };
 
 export default App;

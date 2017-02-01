@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { browserHistory } from 'react-router';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/react-instantsearch-theme-algolia/style.min.css';
 import Routes from './routes';
 
 ReactDOM.render(
