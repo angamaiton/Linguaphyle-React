@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import qs from 'qs';
 import { InstantSearch } from 'react-instantsearch/dom';
-import Navigation from './Navigation';
+import Navigation from './components/Navigation/Navigation';
 import './App.css';
 
 class App extends Component {

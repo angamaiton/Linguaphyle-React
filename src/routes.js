@@ -12,14 +12,16 @@ import EtymologyDetails from './components/Etymology/EtymologyDetails';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Search from './pages/Search';
-import NotFound from './NotFound';
+import NotFound from './pages/NotFound';
 
 const Routes = props => (
   <Router {...props}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
       <Route path="/languages" component={Languages}>
-        <Route path="/language/:id" component={LanguageDetails} />
+        <Route path="/language/:id" component={LanguageDetails}>
+          <Route path="sublanguages" component={SublanguageList} />
+        </Route>
       </Route>
       <Route path="/linguistics" component={Linguistics} />
       <Route path="/etymology" component={Etymology}>

@@ -25,7 +25,7 @@ class SublanguageList extends Component {
       asArray: true,
       then(sublanguages) {
         this.setState({ sublanguages });
-        console.log(this.state.list);
+        console.log(this.props.params);
       },
     });
   }
@@ -42,6 +42,10 @@ class SublanguageList extends Component {
     );
   }
 }
+
+SublanguageList.propTypes = {
+
+};
 
 export default SublanguageList;
 

@@ -19,7 +19,7 @@ class Languages extends Component {
       loading: true,
     };
   }
-  componentWillMount() {
+  componentDidMount() {
     base.fetch('languages', {
       context: this,
       asArray: true,
@@ -27,9 +27,6 @@ class Languages extends Component {
         this.setState({ list });
       },
     });
-  }
-  handleTermChange(term) {
-    console.log(term);
   }
   render() {
     return (
