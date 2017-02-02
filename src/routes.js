@@ -10,6 +10,7 @@ import Linguistics from './pages/Linguistics';
 import Etymology from './pages/Etymology';
 import EtymologyDetails from './components/Etymology/EtymologyDetails';
 import Login from './pages/Login';
+import Register from './pages/Register';
 import Search from './pages/Search';
 import NotFound from './NotFound';
 
@@ -17,12 +18,15 @@ const Routes = props => (
   <Router {...props}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
-      <Route path="/languages" component={Languages} />
+      <Route path="/languages" component={Languages}>
+        <Route path="/language/:id" component={LanguageDetails} />
+      </Route>
       <Route path="/linguistics" component={Linguistics} />
       <Route path="/etymology" component={Etymology}>
         <Route path="/etymology/:id" component={EtymologyDetails} />
       </Route>
       <Route path="/login" component={Login} />
+      <Route path="/register" component={Register} />
       <Route path="/search" component={Search}>
         <Route path="/language/:id" component={LanguageDetails} />
       </Route>

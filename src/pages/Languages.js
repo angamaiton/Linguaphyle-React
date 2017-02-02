@@ -19,7 +19,7 @@ class Languages extends Component {
       loading: true,
     };
   }
-  componentDidMount() {
+  componentWillMount() {
     base.fetch('languages', {
       context: this,
       asArray: true,

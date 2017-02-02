@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const LanguageSearchResults = ({ hit }) => (
   <div>
-    <Link key={hit.id} className="nav-item nav-link" to={`/language/${hit.id}`}>
+    <Link key={hit.id} className="nav-item nav-link" to={`/language/${hit.id}`} activeClassName="active">
       {hit.name}
     </Link>
   </div>

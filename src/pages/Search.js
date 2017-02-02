@@ -1,12 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { SearchBox, Hits, RefinementList, CurrentRefinements } from 'react-instantsearch/dom';
 import LanguageSearchResults from '../components/Languages/LanguageSearchResults';
 import './Search.css';
 
 class Search extends Component {
-  componentDidMount() {
-    console.log('hello');
-  }
   render() {
     return (
       <div className="row">
@@ -24,5 +21,9 @@ class Search extends Component {
     );
   }
 }
+
+Search.propTypes = {
+  children: PropTypes.node,
+};
 
 export default Search;
